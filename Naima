@@ -1,3 +1,31 @@
 SP16-BSE-066 BSSE-VIB
 Naima Athar here
-hI nAIMA
+package diagnol;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+
+public class lk {
+	 static final String regex= "\\b(if) ";
+	//static final String REGEX = "^[a-z0-9._+-]+@[a-z0-9.-]+.[a-z]{1,3}$";
+	
+
+	public static void main(String[] args) {
+			
+			Scanner in = new Scanner (System.in);
+			System.out.println("Enter");
+			String input = in.nextLine();
+			boolean bool=false;
+			
+			Pattern p = Pattern.compile("[[if]]([\\(.*\\)])] | [[if]([\\(.*\\)]).*] | [[if] ([\\(.*\\)]).*[else].*]");
+			Matcher m = p.matcher(input);
+			while (m.find()){
+				bool=true;
+			}
+			System.out.println(bool);
+	}
+
+}
